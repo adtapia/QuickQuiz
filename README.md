@@ -1,4 +1,4 @@
-# Quiz_website
+# QuickQuiz
 A collaborative project to develop a fully functional quiz application. This README provides an overview of the app's features, setup instructions, and the roles of each team member.
 
 
@@ -37,5 +37,11 @@ A collaborative project to develop a fully functional quiz application. This REA
 
 ## Team Members and Roles
 ### 1. **Adrian Tapia** (Team Lead)
-### 1. **** 
-### 1. **** 
+- 
+   
+### 2. ** ** 
+- 
+   
+### 3. ** ** 
+- 
+   
