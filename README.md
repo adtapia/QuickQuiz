@@ -42,6 +42,6 @@ A collaborative project to develop a fully functional quiz application. This REA
 ### 2. **Tej Aidee** 
 -       
    
-### 3. ** ** 
+### 3. **Arooj Manzar** 
 - 
    
