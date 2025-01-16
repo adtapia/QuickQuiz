@@ -39,8 +39,8 @@ A collaborative project to develop a fully functional quiz application. This REA
 ### 1. **Adrian Tapia** (Team Lead)
 - 
    
-### 2. ** ** 
-- Tej aidee      
+### 2. **Tej Aidee** 
+-       
    
 ### 3. ** ** 
 - 
