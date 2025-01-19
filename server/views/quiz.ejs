@@ -55,7 +55,7 @@
         <footer>
             <% if (current_question < question_set.length) { %>
                 <div class="progress" role="progressbar" aria-valuenow="<%= (current_question + 1) / question_set.length * 100 %>" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar" style="width: <%= (current_question + 1) / question_set.length * 100 %>%;"></div>
+                    <div class="progress-bar" style="width: <%= ((current_question + 1) / question_set.length * 100).toFixed(2) %>%>%;"></div>
                 </div>
             <% } %>
         </footer>
