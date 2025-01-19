@@ -20,7 +20,7 @@ try {
     let q_num = 0;
     let temp = null;
 
-    while (question_set.length < 11) {
+    while (question_set.length < 10) {
         temp = Math.floor(Math.random() * max);
         if (!question_set.includes(temp)) {
             question_set[q_num] = userDB[temp];
@@ -31,7 +31,6 @@ try {
     console.error('Error reading file:', err);
 }
 
-console.log(question_set);
 
 // GET quiz route
 router.get('/', function(req, res, next) {
@@ -49,20 +48,20 @@ router.get('/next/:index', (req, res) => {
         score++; 
     }
 
-    const next_question = current_question++;
+    const next_question = current_question + 1;
 
     if (next_question < question_set.length) {
         res.render('quiz', { question_set, current_question: next_question, score });
     } else {
       //if we finish all the questions we want to go to the result page
-        res.redirect({score});
+        res.redirect(`/result?score=${score}`);
     }
 });
 
 // Results page
 router.get('/result', (req, res) => {
-    const Score = req.query.score;
-    res.render('result', { Score });
+  const score = req.query.score; 
+  res.render('result', { score });
 });
 
 module.exports = router;
