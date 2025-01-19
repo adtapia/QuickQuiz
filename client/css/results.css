@@ -1,0 +1,136 @@
+/* Body and general styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212 ;
+   color:whit;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  header {
+    text-align: center;
+    background-color: #121212 ;
+    color:white;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 10px 0 0;
+  }
+  
+  main {
+    padding: 20px;
+    text-align: center;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    max-width:100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  #results, #timeTaken, #leaderboard {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #leaderboardList {
+    background-color: #fff;
+    border-radius: 8px;
+  }
+  
+  .leaderboard-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #questionTimes {
+    list-style: none;
+    padding-left: 0;
+    font-size: 14px;
+  }
+  
+  button {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 10px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+  }
+  
+  footer {
+    text-align: center;
+    background-color: #121212 ;
+    color: #fff;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+  }
+  
+  h2, h3 {
+    color: #333;
+  }
+  
+  #scoreValue, #totalQuestions {
+    font-weight: bold;
+    font-size: 1.3em;
+  }
+  
+  #timeTaken h3, #leaderboard h3 {
+    color: #444;
+    margin-bottom: 10px;
+  }
+  
+  #results p {
+    font-size: 18px;
+    color: #555;
+  }
+  
+  #actionButtons {
+    margin-top: 20px;
+  }
+  
+  #actionButtons button {
+    background-color: #28a745;
+  }
+  
+  
+  #endQuiz {
+    background-color: red; /* Set the button's background color to red */
+    color: white; /* Make the text white for contrast */
+  }
+  
+  #endQuiz:hover {
+    background-color: darkred; /* Change color to dark red when hovered */
+    transform: translateY(-2px); /* Optionally add a slight hover effect */
+  }
+  
+  
+  #actionButtons button:hover {
+    background-color: #218838;
+  }
+  
