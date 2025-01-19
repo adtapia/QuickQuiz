@@ -4,51 +4,65 @@ const fs = require("fs");
 
 const path = "../../client/data/questions.json";
 
-
-
 let question_set = [];
-let current_questions = 0;
 let score = 0;
 
-
-
-
+// Function to read the questions database
 function readUserDB() {
     let data = fs.readFileSync(path, "utf-8");
     return JSON.parse(data);
 }
 
-
+//fills question_set with unique random questions
 try {
     let userDB = readUserDB();
-    let max = userDB.length
-    let q_num=0;
-    let temp =null;
-    while(question_set.length<11){
-      temp= Math.floor(Math.random() * max) + 1;
-       
-      if(!question_set.includes(temp)){
-        question_set[q_num] =temp
-        q_num++;
-      }
+    let max = userDB.length;
+    let q_num = 0;
+    let temp = null;
+
+    while (question_set.length < 11) {
+        temp = Math.floor(Math.random() * max);
+        if (!question_set.includes(temp)) {
+            question_set[q_num] = userDB[temp];
+            q_num++;
+        }
     }
-
-
-
-
 } catch (err) {
     console.error('Error reading file:', err);
 }
 
 console.log(question_set);
 
-/* GET home page. */
+// GET quiz route
 router.get('/', function(req, res, next) {
-  res.render('quiz');
+    const current_question = 0;
+    res.render('quiz', { question_set, current_question, score });
 });
 
 
+router.get('/next/:index', (req, res) => {
+    const current_question = parseInt(req.params.index, 10);
+    const userAns = req.query.answer; 
 
+    // Check if the users answer is correct
+    if (userAns && userAns === question_set[current_question].correctAnswer) {
+        score++; 
+    }
 
+    const next_question = current_question++;
+
+    if (next_question < question_set.length) {
+        res.render('quiz', { question_set, current_question: next_question, score });
+    } else {
+      //if we finish all the questions we want to go to the result page
+        res.redirect({score});
+    }
+});
+
+// Results page
+router.get('/result', (req, res) => {
+    const Score = req.query.score;
+    res.render('result', { Score });
+});
 
 module.exports = router;

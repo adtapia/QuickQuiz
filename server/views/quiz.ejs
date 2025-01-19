@@ -19,9 +19,6 @@
                             <li class="nav-item">
                                 <input class="btn btn-primary" type="reset" value="Reset">
                             </li>
-                            <!-- <li class="nav-item">
-                                <a href="#" class="btn btn-secondary disabled" tabindex="-1" role="button" aria-disabled="true">Timer</a>
-                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -30,15 +27,17 @@
 
         <section>
             <div class="card-container">
-                <% if (currentQuestionIndex >= 0) { %>
+                <% if (current_question < question_set.length) { %>
                     <div class="card">
-                        <h5 class="card-header"><%= questions[currentQuestionIndex].question %></h5>
+                        <h5 class="card-header"><%= question_set[current_question].question %></h5>
                         <div class="card-body">
-                            <div class="d-grid gap-2 col-6 mx-auto">
-                                <% questions[currentQuestionIndex].options.forEach((option, index) => { %>
-                                    <button class="btn btn-primary" type="button"><%= option %></button>
-                                <% }) %>
-                            </div>
+                            <form method="GET" action="/next/<%= current_question %>">
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                    <% question_set[current_question].options.forEach((option) => { %>
+                                        <button class="btn btn-primary" type="submit" name="answer" value="<%= option %>"><%= option %></button>
+                                    <% }) %>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 <% } else { %>
@@ -46,6 +45,7 @@
                         <h5 class="card-header">Quiz Completed</h5>
                         <div class="card-body">
                             <p>Thank you for taking the quiz!</p>
+                            <p>Your score: <%= score %> / <%= question_set.length %></p>
                         </div>
                     </div>
                 <% } %>
@@ -53,13 +53,9 @@
         </section>
 
         <footer>
-            <div class="progress" role="progressbar" aria-valuenow="<%= (currentQuestionIndex + 1) / questions.length * 100 %>" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar" style="width: <%= (currentQuestionIndex + 1) / questions.length * 100 %>%;"></div>
-            </div>
-
-            <% if (currentQuestionIndex >= 0 && currentQuestionIndex < questions.length - 1) { %>
-                <div class="next-button">
-                    <a href="/next/<%= currentQuestionIndex %>" class="btn btn-primary">Next Question</a>
+            <% if (current_question < question_set.length) { %>
+                <div class="progress" role="progressbar" aria-valuenow="<%= (current_question + 1) / question_set.length * 100 %>" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar" style="width: <%= (current_question + 1) / question_set.length * 100 %>%;"></div>
                 </div>
             <% } %>
         </footer>
