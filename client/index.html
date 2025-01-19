@@ -3,8 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quiz Home Page</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body> 
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="#">QuizApp</a>
+            <a href=" #" ><img src="./quizapp.png.jpg"></a>
+        </div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="login.html" class="login-btn">Login</a>
+        </div>
+        
+    </div>
+
+    <div class="dark-mode">
+        <button class="toggle-button" onclick="toggleMode()">Switch to lightMode</button>
+    </div>
+    
+    <div class="container">
+        <h1>Welcome to the Quiz!</h1>
+        <p>Click the button below to start the quiz.</p>
+        <a href="quiz.html" class="start-btn">Start Quiz</a>
+        
+    </div>
+    <div class="contact">
+        <div class="icon">
+            <a href=" https://www.facebook.com/" ><img src="./facebook.png"></a>
+            <a href=" https://www.youtube.com/results?search_query=quiz+game" ><img src="./youtube.png"></a>
+            <a href="https://apps.apple.com/us/app/app-store-connect/id1234793120" ><img src="./ap.png"></a>
+            <div class="lm">
+            <button id="theme-toggle" class="theme-toggle">Switch to Light Mode</button>
+            <script src="script.js" ></script>
+    </div>
+            </div>
+
+    </div>
 </body>
+<footer> 
+   <div> &copy; 2025 QuizApp. All rights reserved.</div>
+</footer>
 </html>
