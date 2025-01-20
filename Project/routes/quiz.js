@@ -32,7 +32,7 @@ function genset(){
 
 
 
-router.get('/', function(req, res) {
+router.get('/quiz', function(req, res) {
     const current_question = 0;
     score = 0; 
     question_set=genset()
