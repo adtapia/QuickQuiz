@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const fs = require("fs");
 
-const path = "../questions.json";
+const path = "./questions.json";
 
 let question_set = [];
 let score = 0;
@@ -13,27 +13,30 @@ function readUserDB() {
 }
 
 // Fill question_set with unique random questions
-try {
-    let userDB = readUserDB();
-    let max = userDB.length;
-    let q_num = 0;
-    let temp = null;
-
-    while (question_set.length < 10) {
-        temp = Math.floor(Math.random() * max);
-        if (!question_set.includes(temp)) {
-            question_set[q_num] = userDB[temp];
-            q_num++;
+function genset(){
+    
+        let userDB = readUserDB(); 
+        let max = userDB.length;
+        let questionSet = [];
+        let temp;
+    
+        while (questionSet.length < 10) {
+            temp = Math.floor(Math.random() * max);
+            if (!questionSet.includes(userDB[temp])) {
+                questionSet.push(userDB[temp]);
+            }
         }
-    }
-} catch (err) {
-    console.error('Error reading file:', err);
+        return questionSet; 
 }
+
+
 
 
 router.get('/', function(req, res) {
     const current_question = 0;
     score = 0; 
+    question_set=genset()
+
     res.render('quiz', { question_set, current_question, score });
 });
 
