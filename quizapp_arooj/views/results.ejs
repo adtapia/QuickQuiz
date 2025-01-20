@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Results</title>
+    <link rel="stylesheet" href="../stylesheets/results.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Quiz Results</h1>
+    </header>
+    <div class="navbar">
+        <div class="logo">
+            <a href="#">QuizApp</a>
+            <a href="#"><img src="../images/quizapp.png.jpg" alt="QuizApp Logo"></a>
+        </div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/quiz">Quiz</a>
+            <a href="/user" class="login-btn">Login</a>
+        </div>
+    </div>
+
+
+    <main>
+        <!-- Results Section -->
+        <section id="results">
+            <h2>Your Score</h2>
+            <p id="score">
+                Score: <span id="scoreValue">0</span> /
+                <span id="totalQuestions">0</span>
+            </p>
+        </section>
+
+        <!-- Time Taken to Answer Each Question -->
+        <section id="timeTaken">
+            <h3>Time Taken per Question</h3>
+            <ul id="questionTimes">
+                <!-- Dynamically populated via JavaScript -->
+            </ul>
+        </section>
+
+
+        <!-- Buttons for restarting or ending the quiz -->
+        <section id="actionButtons">
+            <a href="/quiz" id="restartQuiz" class="action-button">
+                Restart Quiz
+            </a>
+            <a href="#" id="EndQuiz" class="action-button" onclick="endQuiz()">
+                End Quiz
+            </a>
+        </section>
+    </main>
+    <script src="/public/javascripts/results.js"></script>
+    <footer>
+        <p>&copy; 2025 QuizApp. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
