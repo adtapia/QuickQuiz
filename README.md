@@ -34,8 +34,8 @@ A collaborative project to develop a fully functional quiz application. This REA
 ### 3. **Arooj Manzar** 
 -  Backend Development
 - Server Setup:
--Developed an Express.js server (app.js) to handle API requests.
--Implement backend logic to:
--the server to serve the HTML, CSS, and JavaScript files to the client.
+- Developed an Express.js server (app.js) to handle API requests.
+- Implement backend logic to:
+- the server to serve the HTML, CSS, and JavaScript files to the client.
 
    
