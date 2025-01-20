@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Inline CSS to style in dark mode -->
+    <style>
+      /* Global dark background & light text */
+      body {
+        background-color: #121212;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Navbar & Logo */
+      .navbar {
+        background-color: #1f1f1f;
+        padding: 15px;
+      }
+      .navbar .logo {
+        display: flex;
+        align-items: center;
+      }
+      .navbar .logo a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1.4rem;
+        margin-right: 15px;
+      }
+      .navbar .logo img {
+        height: 40px;
+        width: auto;
+        border-radius: 4px;
+      }
+
+      /* Container for the login form */
+      .container {
+        max-width: 400px;
+        margin: 40px auto;
+        background-color: #1e1e1e;
+        padding: 20px 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .signin_form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Heading styles */
+      .form_header h1 {
+        margin-bottom: 10px;
+        font-size: 1.8rem;
+      }
+      .form_header p {
+        margin-bottom: 10px;
+      }
+      .form_header a {
+        color: #3498db;
+        text-decoration: none;
+      }
+      .form_header a:hover {
+        text-decoration: underline;
+      }
+      .font-size {
+        font-size: 0.9rem;
+        color: #aaa;
+        margin-bottom: 20px;
+      }
+
+      /* Labels & Inputs */
+      label {
+        display: block;
+        margin: 12px 0 6px;
+        font-weight: bold;
+        color: #ccc;
+      }
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #2e2e2e;
+        border: 1px solid #444;
+        color: #fff;
+        border-radius: 4px;
+      }
+      input[type="email"]:focus,
+      input[type="password"]:focus {
+        border-color: #777;
+      }
+
+      /* Checkbox Section */
+      .checkbox {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 15px;
+      }
+      .checkbox input[type="checkbox"] {
+        margin-right: 8px;
+        margin-top: 4px;
+      }
+      .checkbox p {
+        color: #bbb;
+        font-size: 0.9rem;
+      }
+
+      /* Forgot Password Link */
+      .forgot-passport {
+        margin: 10px 0;
+      }
+      .forgot-passport a {
+        color: #f39c12;
+        text-decoration: none;
+      }
+      .forgot-passport a:hover {
+        text-decoration: underline;
+      }
+
+      /* Submit Button */
+      input[type="submit"] {
+        margin-top: 20px;
+        padding: 12px;
+        border: none;
+        border-radius: 4px;
+        background-color: #3498db;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #2980b9;
+      }
+
+      /* Footnote */
+      .footnote {
+        margin-top: 20px;
+        font-size: 0.8rem;
+        color: #bbb;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">
+        <a href="#">QuizApp</a>
+        <a href="#">
+          <!-- Sample image path. Adjust if your image is located elsewhere. -->
+          <img src="./quizapp.png.jpg" alt="QuizApp Logo" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Main container (login form) -->
+    <div class="container">
+      <form method="GET" action="/" class="signin_form">
+        <div class="form_header">
+          <h1>LOGIN</h1>
+          <p>
+            If you don't have an account?
+            <a href="signup.html">Sign up</a>
+          </p>
+          <div class="font-size">*required</div>
+        </div>
+
+        <label for="email">Email or Username*</label>
+        <input id="email" type="email" name="email" />
+
+        <label for="password">Password*</label>
+        <input id="password" type="password" name="password" />
+
+        <div class="forgot-passport">
+          <a href="#" target="_blank">Forgot password?</a>
+        </div>
+
+        <div class="checkbox">
+          <input type="checkbox" />
+          <p>
+            I do not want to receive emails with advertising, news, suggestions or marketing
+            promotions
+          </p>
+        </div>
+
+        <input type="submit" value="Sign in" />
+
+        <p class="footnote">
+          By signing in, you are accepting our terms of service and privacy policy.
+        </p>
+      </form>
+    </div>
+  </body>
+</html>

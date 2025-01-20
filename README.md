@@ -26,8 +26,9 @@ A collaborative project to develop a fully functional quiz application. This REA
 
 
 ### 2. **Tej Aidee** 
--       
-
+- Developed the home page including **index.ejs**and CSS **index.css**    
+-Develope result page including **result.ejs and css **Result.css
+-integrate with quiz.(result and start quiz button).
 
    
 ### 3. **Arooj Manzar** 
