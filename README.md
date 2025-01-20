@@ -3,6 +3,7 @@ A collaborative project to develop a fully functional quiz application. This REA
 
 
 
+
 ## Feature(s)
 
 **Replay/Restart Functionality**:
@@ -10,8 +11,10 @@ A collaborative project to develop a fully functional quiz application. This REA
 
 
 
+
 ### Prerequisites
 - [Node.js](https://nodejs.org/) (v14 or higher)
+
 
 
 ## Team Members and Roles
@@ -20,9 +23,15 @@ A collaborative project to develop a fully functional quiz application. This REA
 - Implemented the **JavaScript route** and **restart functionality** for the quiz.
 - Set up and managed the **GitHub repository**. 
    
+
+
 ### 2. **Tej Aidee** 
 -       
+
+
    
 ### 3. **Arooj Manzar** 
 - 
+
+
    
