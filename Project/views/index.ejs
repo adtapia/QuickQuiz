@@ -1,48 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Home Page</title>
-    <link rel="stylesheet" href="/stylesheet/index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Home Page</title>
+  <!-- Link to your index.css in public/stylesheets -->
+  <link rel="stylesheet" href="/stylesheets/index.css" />
 </head>
 
 <body>
-    <div class="navbar">
-        <div class="logo">
-            <a href="#">QuizApp</a>
-            <a href=" #" ><img src="/stylesheet/images/quizapp.png.jpg"></a>
-        </div>
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="/views/results.ejs">results</a>
-            <a href="/views/login.ejs" class="login-btn">Login</a>
-        </div>
-        
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <div class="logo">
+      <a href="#">QuizApp</a>
+      <!-- If "quizapp.png.jpg" is in public/images, use /images/quizapp.png.jpg -->
+      <a href="#">
+        <img src="/images/quizapp.png.jpg" alt="QuizApp Logo" />
+      </a>
     </div>
+    <div class="nav-links">
+      <!-- Link to your EJS files; Express will serve them if your routes are set correctly -->
+      <a href="/">Home</a>
+      <a href="#">About</a>
+      <!-- If you want to render results.ejs on GET /results, link to "/results" -->
+      <a href="/results">Results</a>
+      <!-- If you want to render login.ejs on GET /login, link to "/login" -->
+      <a href="/login" class="login-btn">Login</a>
+    </div>
+  </div>
 
-    
-    <div class="container">
-        <h1>Welcome to the Quiz!</h1>
-        <p>Click the button below to start the quiz.</p>
-        <a href="/views/quiz.ejs" class="start-btn">Start Quiz</a>
-        
-    </div>
-    <div class="contact">
-        <div class="icon">
-            <a href=" https://www.facebook.com/" ><img src="../client/images/facebook.png"></a>
-            <a href=" https://www.youtube.com/results?search_query=quiz+game" ><img src="../client/images/youtube.png"></a>
-            <a href="https://apps.apple.com/us/app/app-store-connect/id1234793120" ><img src="../client/images/ap.png"></a>
-            <div class="dark-mode">
-            <button id="theme-toggle" class="theme-toggle">Switch to Light Mode</button>
-            <script src="/routes/index.js" ></script>
-    </div>
-            </div>
+  <!-- Main Container -->
+  <div class="container">
+    <h1>Welcome to the Quiz!</h1>
+    <p>Click the button below to start the quiz.</p>
+    <!-- If you want to render quiz.ejs on GET /quiz, link to "/quiz" -->
+    <a href="/quiz" class="start-btn">Start Quiz</a>
+  </div>
 
+  <!-- Contact/Social Section -->
+  <div class="contact">
+    <div class="icon">
+      <!-- Ensure these images exist in public/images/ -->
+      <a href="https://www.facebook.com/">
+        <img src="/images/facebook.png" alt="Facebook" />
+      </a>
+      <a href="https://www.youtube.com/results?search_query=quiz+game">
+        <img src="/images/youtube.png" alt="YouTube" />
+      </a>
+      <a href="https://apps.apple.com/us/app/app-store-connect/id1234793120">
+        <img src="/images/ap.png" alt="App Store" />
+      </a>
+      <div class="dark-mode">
+        <button id="theme-toggle" class="theme-toggle">Switch to Light Mode</button>
+      </div>
     </div>
+  </div>
+
+  <!-- If your client-side script is in routes/index.js -->
+  <script src="/routes/index.js"></script>
+
+  <!-- Footer -->
+  <footer>
+    <div>&copy; 2025 QuizApp. All rights reserved.</div>
+  </footer>
 </body>
-<footer> 
-   <div> &copy; 2025 QuizApp. All rights reserved.</div>
-</footer>
 </html>
