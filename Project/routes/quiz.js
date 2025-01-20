@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const fs = require("fs");
 
-const path = "./routes/questions.json";
+const path = "../questions.json";
 
 let question_set = [];
 let score = 0;
