@@ -29,10 +29,7 @@ function genset(){
         return questionSet; 
 }
 
-
-
-
-router.get('/quiz', function(req, res) {
+router.get('/', function(req, res) {
     const current_question = 0;
     score = 0; 
     question_set=genset()
@@ -41,7 +38,7 @@ router.get('/quiz', function(req, res) {
 });
 
 // POST route to handle "Next Question"
-router.post('/quiz/:index', (req, res) => {
+router.post('/:index', (req, res) => {
     const current_question = parseInt(req.params.index, 10);
     const userAns = req.body.answer; 
 
@@ -56,14 +53,14 @@ router.post('/quiz/:index', (req, res) => {
         res.render('quiz', { question_set, current_question: next_question, score });
     } else {
 
-        res.redirect(`/result?score=${score}`);
+        res.redirect(`/results?score=${score}`);
     }
 });
 
-// Goes to Results page
+
 router.get('/result', (req, res) => {
-    const score = req.query.score; 
-    res.render('result', { score });
+  const score = req.query.score; 
+  res.render('result', { score });
 });
 
 module.exports = router;

@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('results');
+router.get('/', (req, res) => {
+  const score = parseInt(req.query.score, 10) || 0; 
+  res.render('results', { score }); 
 });
+
+
 
 module.exports = router;
