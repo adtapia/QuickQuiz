@@ -1,6 +1,6 @@
 // Dynamically update quiz results
 document.addEventListener("DOMContentLoaded", () => {
-    const scoreValue = 7; // Example: User scored 7 points
+    const scoreValue = score; // Example: User scored 7 points
     const totalQuestions = 10; // Example: Total questions in the quiz
     const timesPerQuestion = [12, 15, 10, 8, 20, 25, 18, 16, 12, 10]; // Example: Time taken for each question in seconds
     const leaderboardData = [
