@@ -1,38 +1,17 @@
 var express = require('express');
+var axios = require("axios");
 var router = express.Router();
-const fs = require("fs");
-
-const path = "./questions.json";
 
 let question_set = [];
 let score = 0;
 
-function readUserDB() {
-    let data = fs.readFileSync(path, "utf-8");
-    return JSON.parse(data);
-}
 
-// Fill question_set with unique random questions
-function genset(){
-    
-        let userDB = readUserDB(); 
-        let max = userDB.length;
-        let questionSet = [];
-        let temp;
-    
-        while (questionSet.length < 10) {
-            temp = Math.floor(Math.random() * max);
-            if (!questionSet.includes(userDB[temp])) {
-                questionSet.push(userDB[temp]);
-            }
-        }
-        return questionSet; 
-}
+// Get questions from the Trivia API; Ensuring when the user resets they are served a new batch of questions 
 
-router.get('/', function(req, res) {
+router.get('/', async function(req, res) {
     const current_question = 0;
     score = 0; 
-    question_set=genset()
+    question_set=
 
     res.render('quiz', { question_set, current_question, score });
 });
