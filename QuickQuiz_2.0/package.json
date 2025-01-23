@@ -1,7 +1,7 @@
 {
   "name": "github-groupquizapp",
   "version": "0.0.0",
-  "type": "commonjs", 
+  "type": "commonjs",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -12,6 +12,7 @@
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
+    "he": "^1.2.0",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1"
   }

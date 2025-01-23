@@ -3,11 +3,10 @@ Project 3: Quiz App
 In this project you and your team will be creating a quiz application using client-server architecture and using APIs. 
 Project 3 builds on project 2, you will need to incorporate:
 
-1. A signup/login page for the user to create an account.
 2. Save users score along with other user information into MongoDB.
 3. Create a user profile page where the user can see their play history.
 
-Additionally, you will cover your Quiz app from using hard coded questions to using the Trivia API (free): 
+Additionally, you will cover your Quiz app using the Trivia API (free): 
 https://opentdb.com/api_config.php
 
 If you can deploy the server in Heroku or a cloud service of your choice (usually free of charge for basic tiers)
