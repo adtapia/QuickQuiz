@@ -80,7 +80,7 @@ router.get('/', async function(req, res) {
 router.post('/:index', (req, res) => {
     const current_question = parseInt(req.params.index, 10);
     const userAns = req.body.answer; 
-    const time = parseInt(req.body.time, 10);
+    const timepassed = parseInt(req.body.time, 10);
 
     // Check if the user's answer is correct
     if (userAns && userAns === question_set[current_question].answer) {
@@ -90,18 +90,13 @@ router.post('/:index', (req, res) => {
     const next_question = current_question + 1;
 
     if (next_question < question_set.length) {
-        res.render('quiz', { question_set, current_question: next_question, score, time });
+        res.render('quiz', { question_set, current_question: next_question, score, time:Date.now() - timepassed * 1000 });
     } else {
-        const Ttime_sec= Math.floor((Date.now() - time) / 1000);
-        console.log(Ttime_sec);
-        res.redirect(`/results?score=${score}&time=${Ttime_sec}`);
+        const mins = Math.floor(timepassed / 60);
+        const secs = timepassed % 60;
+        const formattedTime = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
     }
 });
 
-
-// router.get('/result', (req, res) => {
-//   const score = req.query.score; 
-//   res.render('result', { score });
-// });
 
 module.exports = router;
