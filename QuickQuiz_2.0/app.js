@@ -14,14 +14,14 @@ var signupRouter = require('./routes/signup'); //user signup
 
 
 var app = express();
-(async () => {
-  try {
-    await connectToDB();
-    console.log('Database initialized');
-  } catch (error) {
-    console.error('Failed to start database:', error);
-  }
-})();
+// (async () => {
+//   try {
+//     await connectToDB();
+//     console.log('Database initialized');
+//   } catch (error) {
+//     console.error('Failed to start database:', error);
+//   }
+// })();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
