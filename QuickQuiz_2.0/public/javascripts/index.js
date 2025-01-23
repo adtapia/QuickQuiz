@@ -9,9 +9,9 @@ themeToggleButton.addEventListener('click', () => {
 
     if (isDarkMode) {
         body.classList.remove('light-mode');
-        themeToggleButton.textContent = 'Switch to Light Mode';
+        themeToggleButton.textContent = 'Switch to dark Mode';
     } else {
         body.classList.add('light-mode');
-        themeToggleButton.textContent = 'Switch to Dark Mode';
+        themeToggleButton.textContent = 'Switch to light Mode';
     }
 });
