@@ -2,17 +2,18 @@ var express = require('express');
 var router = express.Router();
 const { getCollection } = require('../models/db');
 
-router.get('/', function(req, res, next) {
-  res.redirect("/signup");
-});
 
-router.get('/signin', function(req, res, next) {
+//register page (signin)
+router.get('/signin', (req, res) =>{
   res.render("signin");
 });
 
-router.get('/signup', function(req, res, next) {
+//register page (signup)
+router.get('/signup', (req, res) =>{
   res.render("signup");
 });
+
+
 
 router.post("/signup/submit", async (req, res) => {
   const usersCollection = getCollection('users');

@@ -10,7 +10,7 @@ var indexRouter = require('./routes/index'); // Home route
 var quizRouter = require('./routes/quiz'); // Quiz route
 var resultsRouter = require('./routes/results');
 var userRouter = require('./routes/user');
-var signupRouter = require('./routes/signup');
+var signupRouter = require('./routes/signup'); //user signup
 
 
 var app = express();
