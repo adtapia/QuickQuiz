@@ -3,13 +3,24 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+require("dotenv").config();
+const { connectToDB } = require('./models/db');
 
 var indexRouter = require('./routes/index'); // Home route
 var quizRouter = require('./routes/quiz'); // Quiz route
 var resultsRouter = require('./routes/results');
 var userRouter = require('./routes/user');
 
+
 var app = express();
+(async () => {
+  try {
+    await connectToDB();
+    console.log('Database initialized');
+  } catch (error) {
+    console.error('Failed to start database:', error);
+  }
+})();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -45,5 +56,7 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error');
 });
+
+//
 
 module.exports = app;
