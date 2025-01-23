@@ -10,7 +10,7 @@ body {
 }
 
 body.light-mode {
-  background-color: black;
+  background-color: rgb(33, 33, 33);
   color: #007bff;
 }
 
@@ -55,6 +55,10 @@ body.light-mode {
   padding: 30px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+body.light-mode .container {
+  color: white;
+  background-color: rgb(33, 33, 33);
+}
 
 h1 {
   color: #007bff;
@@ -66,7 +70,8 @@ h1 {
 }
 
 body.light-mode h1 {
-  color: gray;
+  color: white;
+  background-color: rgb(33, 33, 33);
 }
 
 p {
@@ -74,7 +79,10 @@ p {
   color: #555;
   margin-bottom: 20px;
 }
-
+body.light-mode p {
+  color: white;
+  background-color: rgb(33, 33, 33);
+}
 .action-button {
   display: inline-block;
   padding: 10px 20px;
@@ -85,6 +93,10 @@ p {
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
+}
+body.light-mode .action-button {
+  color: white;
+ 
 }
 
 .action-button:hover {
