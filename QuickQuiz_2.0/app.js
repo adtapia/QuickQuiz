@@ -10,6 +10,7 @@ var indexRouter = require('./routes/index'); // Home route
 var quizRouter = require('./routes/quiz'); // Quiz route
 var resultsRouter = require('./routes/results');
 var userRouter = require('./routes/user');
+var signupRouter = require('./routes/signup');
 
 
 var app = express();
@@ -40,6 +41,7 @@ app.use('/', indexRouter); // Home route
 app.use('/quiz', quizRouter); // Quiz route
 app.use('/results', resultsRouter);
 app.use('/user', userRouter);
+app.use('/signup', signupRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
