@@ -16,12 +16,11 @@ function shuffleArr(arr) {
 }
 
 
-
 async function genquest(amount=10,category=9,difficulty="easy",){
     const baseURL = "https://opentdb.com/api.php";
     const type = "multiple";
     
-     const response = await axios.get(
+     var response = await axios.get(
                 baseURL,
                 {
                     params: {
@@ -70,10 +69,9 @@ router.get('/', async function(req, res) {
 
     const current_question = 0;
     score = 0; 
-        
+    const time = Date.now();
     question_set=await genquest();
-  
-    res.render('quiz', { question_set, current_question, score });
+    res.render('quiz', { question_set, current_question, score, time });
 });
 
 
@@ -82,6 +80,7 @@ router.get('/', async function(req, res) {
 router.post('/:index', (req, res) => {
     const current_question = parseInt(req.params.index, 10);
     const userAns = req.body.answer; 
+    const time = parseInt(req.body.time, 10);
 
     // Check if the user's answer is correct
     if (userAns && userAns === question_set[current_question].answer) {
@@ -91,10 +90,11 @@ router.post('/:index', (req, res) => {
     const next_question = current_question + 1;
 
     if (next_question < question_set.length) {
-        res.render('quiz', { question_set, current_question: next_question, score });
+        res.render('quiz', { question_set, current_question: next_question, score, time });
     } else {
-
-        res.redirect(`/results?score=${score}`);
+        const Ttime_sec= Math.floor((Date.now() - time) / 1000);
+        console.log(Ttime_sec);
+        res.redirect(`/results?score=${score}&time=${Ttime_sec}`);
     }
 });
 
