@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-
+const { getCollection } = require('/db');
 const UserSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -47,6 +47,11 @@ UserSchema.methods.matchPassword = async function (enteredPassword) {
     throw new Error('Error comparing passwords');
   }
 };
+async function getUserById(userId) { 
+  const usersCol = getCollection('users'); 
+ return usersCol.findOne({ _id: new ObjectId(userId) }); 
+}
+module.exports = { getUserById };
 
 
 module.exports = mongoose.model('User', UserSchema);
