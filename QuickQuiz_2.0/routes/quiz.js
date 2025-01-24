@@ -94,7 +94,8 @@ router.post('/:index', (req, res) => {
     } else {
         const mins = Math.floor(timepassed / 60);
         const secs = timepassed % 60;
-        const formattedTime = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        const fTime = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        res.redirect(`/results?score=${score}&time=${fTime}`);
     }
 });
 
