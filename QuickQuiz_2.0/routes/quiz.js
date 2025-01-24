@@ -70,6 +70,8 @@ router.get('/', async function(req, res) {
     const current_question = 0;
     score = 0; 
     const time = Date.now();
+
+    //if statment to see which to run
     question_set=await genquest();
     res.render('quiz', { question_set, current_question, score, time });
 });
