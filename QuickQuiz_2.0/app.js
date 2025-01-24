@@ -12,7 +12,7 @@ var resultsRouter = require('./routes/results');
 var userRouter = require('./routes/user');
 var signupRouter = require('./routes/signup'); //user signup
 var signinRouter = require('./routes/signin');
-
+var statsRouter = require('./routes/stats');
 var app = express();
 // (async () => {
 //   try {
@@ -41,6 +41,7 @@ app.use('/results', resultsRouter);
 app.use('/user', userRouter);
 app.use('/signup', signupRouter);
 app.use('/signin', signinRouter);
+app.use('/stats', statsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
