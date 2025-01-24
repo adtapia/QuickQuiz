@@ -4,29 +4,31 @@ const { getCollection } = require('../models/db');
 
 
 //register page (signin)
-router.get('/signin', (req, res) =>{
-  res.render("signin");
+router.get('/', function(req, res) {
+  res.render('signup');
 });
 
-//register page (signup)
-router.get('/signup', (req, res) =>{
-  res.render("signup");
-});
-
-
-
-router.post("/signup/submit", async (req, res) => {
+//handle signup form
+router.post('/submit', async (req, res) => {
   const usersCollection = getCollection('users');
+
   try {
-    await usersCollection.insertOne(req.body);
-  } catch(e) {
-    res.status(500).send("Failed to save to db.")
-  }
+    
+      const { name, email, password } = req.body;
+
+      if (!name || !email || !password) {
+          console.log('Invalid input:', req.body);
+          return res.status(400).send('All fields are required.');
+      }
   
-});
+      const result = await usersCollection.insertOne({ name, email, password });
+      console.log('User successfully inserted:', result);
 
-router.post("/signin/submit", (req, res) => {
-
+      res.status(201).send('Signup successful!');
+  } catch (error) {
+      console.error('Error during signup:', error);
+      res.status(500).send('Failed to save user to the database.');
+  }
 });
 
 module.exports = router;
