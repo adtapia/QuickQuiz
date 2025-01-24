@@ -9,12 +9,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/index/form', async function(req, res) {
-  console.log(req.query);
+  
 
 
   const baseURL = "https://opentdb.com/api.php";
     const type = "multiple";
-    const amount=parseInt(req.query.numQuestions, 10);
+    const amount=parseInt(req.query.numquest, 10);
     const category= req.query.category;
     const difficulty= req.query.difficulty;
     
@@ -35,7 +35,7 @@ router.get('/index/form', async function(req, res) {
             }
             else{
 
-            rres.render('index', { 'error = ${"No questions available for the selected options."}' });
+            res.render('index');
             }
       
 

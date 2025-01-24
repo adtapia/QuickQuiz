@@ -2,6 +2,7 @@ const { MongoClient } = require('mongodb');
 
 const dbURL = "mongodb+srv://aroojmanzar87:IPXNSuzadO0kmMq9@cluster0.kh6hr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
+
 let db;
 
 async function connectToDB() {

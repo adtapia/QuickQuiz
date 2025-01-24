@@ -66,6 +66,7 @@ async function genquest(amount=10,category=9,difficulty="easy",){
 // Get questions from the Trivia API; Ensuring when the user resets they are served a new batch of questions 
 
 router.get('/', async function(req, res) {
+    console.log(req.query);
 
     const current_question = 0;
     score = 0; 
