@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Stats & Leaderboard</title>
+  <link rel="stylesheet" href="/stylesheets/stats.css">
+</head>
+<body>
+  <h1>Player Stats</h1>
+
+  <!-- User Attempts Table -->
+  <section>
+    <h2>Your Quiz Attempts</h2>
+    <% if (userAttempts && userAttempts.length > 0) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Game #</th>
+            <th>Username</th>
+            <th>Date Played</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% userAttempts.forEach((attempt, index) => { %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= attempt.userInfo.name %></td>
+              <td><%= new Date(attempt.playedAt).toLocaleString() %></td>
+              <td><%= attempt.score %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p>You haven't played any quizzes yet.</p>
+    <% } %>
+  </section>
+
+  <!-- Global Leaderboard Table -->
+  <section>
+    <h2>Global Leaderboard (Top 5)</h2>
+    <% if (globalLeaderboard && globalLeaderboard.length > 0) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Score</th>
+            <th>Date Played</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% globalLeaderboard.forEach((entry, index) => { %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= entry.userInfo.name %></td>
+              <td><%= entry.score %></td>
+              <td><%= new Date(entry.playedAt).toLocaleString() %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p>No leaderboard data available.</p>
+    <% } %>
+  </section>
+
+  <p><a href="/index">Return to home</a></p>
+</body>
+</html>
