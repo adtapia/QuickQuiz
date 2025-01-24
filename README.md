@@ -21,7 +21,7 @@ A collaborative project to develop a fully functional quiz application. This REA
 ### 1. **Adrian Tapia** (Team Lead)
 - Developed the **Quiz** section, including **quiz.ejs** and **CSS** styling.
 - Implemented the **JavaScript route** and **restart functionality** for the quiz.
-- Set up and managed the **GitHub repository**. 
+- Set up and maintained the **GitHub repository**. 
 
 ### 2.0
 - Developed a dynamic **Advanced Options** feature on the **homepage**, allowing users to customize their quiz by selecting the number of questions category, and difficulty
