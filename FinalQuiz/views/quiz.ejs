@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="../stylesheets/quiz.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <header>
+            <h1>Start Quiz</h1>
+        </header>
+        <section>
+            <div class="question-card">
+                <% if (question_set && question_set[current_question]) { %>
+                    <h2>Question <%= current_question + 1 %>: <%= question_set[current_question].question %></h2>
+                    <form method="POST" action="/quiz/<%= current_question %>">
+                        <% ['A', 'B', 'C', 'D'].forEach(option => { %>
+                            <% if (question_set[current_question][option]) { %>
+                                <button type="submit" name="answer" value="<%= option %>">
+                                    <%= option %>: <%= question_set[current_question][option] %>
+                                </button>
+                            <% } %>
+                        <% }) %>
+                    </form>
+                <% } else { %>
+                    <p>No questions available. Please contact the admin.</p>
+                <% } %>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
