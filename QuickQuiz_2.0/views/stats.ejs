@@ -1,1 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Quiz Stats</title>
+</head>
+<body>
+  <header>
+    <h1><%= name %>'s Quiz History</h1>
+  </header>
 
+  <main>
+    <% if (scores && scores.length) { %>
+      <ul>
+        <% scores.forEach(function(item) { %>
+          <li>
+            Score: <%= item.score %>
+            &nbsp;|&nbsp;
+            Date: <%= new Date(item.date).toDateString() %>
+          </li>
+        <% }); %>
+      </ul>
+    <% } else { %>
+      <p>You have no quiz history yet.</p>
+    <% } %>
+
+    <a href="/">Back to Home</a>
+  </main>
+</body>
+</html>
