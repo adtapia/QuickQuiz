@@ -4,18 +4,6 @@ A collaborative project to develop a fully functional quiz application. This REA
 
 
 
-## Feature(s)
-
-**Replay/Restart Functionality**:
-   - Users can restart the quiz from the beginning.
-
-
-
-
-### Prerequisites
-- [Node.js](https://nodejs.org/) (v14 or higher)
-
-
 
 ## Team Members and Roles
 
@@ -36,7 +24,7 @@ A collaborative project to develop a fully functional quiz application. This REA
 ### 2. **Tej Aidee** 
 - Developed the home page including **index.ejs**and CSS **index.css**    
 - Develope result page including result.ejs and css Result.css
-- integrate with quiz.(result and start quiz button).
+- made result and start quiz button.
 - made stats.js and ejs and integrated them with app.js.
 - also added collecting user results by date for the stats/profile.
 
