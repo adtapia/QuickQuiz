@@ -35,7 +35,7 @@ router.get('/index/form', async function(req, res) {
             }
             else{
 
-            res.render('index');
+            rres.render('index', { 'error = ${"No questions available for the selected options."}' });
             }
       
 
