@@ -11,7 +11,7 @@ var quizRouter = require('./routes/quiz'); // Quiz route
 var resultsRouter = require('./routes/results');
 var userRouter = require('./routes/user');
 var signupRouter = require('./routes/signup'); //user signup
-
+var signinRouter = require('./routes/signin');
 
 var app = express();
 // (async () => {
@@ -32,8 +32,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-// In app.js
-app.use('/routes', express.static(path.join(__dirname, 'routes')));
 
 
 // Define routes
@@ -42,6 +40,7 @@ app.use('/quiz', quizRouter); // Quiz route
 app.use('/results', resultsRouter);
 app.use('/user', userRouter);
 app.use('/signup', signupRouter);
+app.use('/signin', signinRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
