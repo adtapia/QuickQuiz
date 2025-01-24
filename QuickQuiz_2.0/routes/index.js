@@ -31,7 +31,8 @@ router.get('/index/form', async function(req, res) {
             );
 
             if(response.data.response_code == 0){
-              res.redirect(`/quiz?amount=${amount}&category=${category}&difficulty=${difficulty}`);
+              res.redirect('quiz');
+              // res.redirect(`/quiz?amount=${amount}&category=${category}&difficulty=${difficulty}`);
             }
             else{
 
