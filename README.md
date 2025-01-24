@@ -18,6 +18,7 @@ A collaborative project to develop a fully functional quiz application. This REA
 
 
 ## Team Members and Roles
+
 ### 1. **Adrian Tapia** (Team Lead)
 - Developed the **Quiz** section, including **quiz.ejs** and **CSS** styling.
 - Implemented the **JavaScript route** and **restart functionality** for the quiz.
@@ -39,10 +40,13 @@ A collaborative project to develop a fully functional quiz application. This REA
 
    
 ### 3. **Arooj Manzar** 
--  Backend Development
+- Backend Development
 - Server Setup:
-- Developed an Express.js server (app.js) to handle API requests.
+- Developed an Express.js, server (app.js) to handle API requests.
 - Implement backend logic to:
 - the server to serve the HTML, CSS, and JavaScript files to the client.
+- signin and signup pages setup.
+- database setup.
+- In mongodb new user data is storing. 
 
    
