@@ -1,7 +1,8 @@
 // routes/stats.js
 const express = require('express');
 const router = express.Router();
-const { getUserById } = require('../userdata');
+//const { getUserById } = require('../utils/userdata');
+
 // Adjust path as needed, e.g. '../utils/userdata' or './userdata'
 
 // GET /stats
