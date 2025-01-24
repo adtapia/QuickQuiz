@@ -24,7 +24,7 @@ A collaborative project to develop a fully functional quiz application. This REA
 - Set up and maintained the **GitHub repository**. 
 
 ### 2.0
-- Developed a dynamic **Advanced Options** feature on the **homepage**, allowing users to customize their quiz by selecting the number of questions category, and difficulty
+- Developed a dynamic **Advanced Options** feature on the **homepage**, allowing users to customize their quiz by selecting the number of questions category, and difficulty.
 - Built a **quiz generation system** integrating the **Open Trivia Database API** to fetch and process questions based on user inputs. Implemented a randomization algorithm for shuffling answers and ensured seamless backend handling of quiz resets, dynamic question rendering, score tracking, and time management.
 - Implemented a **quiz timer feature** to track how long users take to complete the quiz, storing and sending the total time to the result page upon completion.
 
